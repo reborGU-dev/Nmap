@@ -1,0 +1,307 @@
+{
+    "objetivo": "192.168.100.128/24",
+    "fecha_escaneo": "2026-11-24T22:24:05",
+    "comando": "nmap -oX - -p 1-1024 -sV --script=banner,http-title --open -O 192.168.100.128/24",
+    "hosts": [
+        {
+            "ip": "192.168.100.1",
+            "hostname": null,
+            "estado": "up",
+            "sistema_operativo": [
+                {
+                    "nombre": "Linux 3.5",
+                    "precision": "98"
+                },
+                {
+                    "nombre": "Linux 2.6.32 - 3.13",
+                    "precision": "96"
+                },
+                {
+                    "nombre": "Linux 3.2 - 3.16",
+                    "precision": "95"
+                },
+                {
+                    "nombre": "Linux 3.2",
+                    "precision": "95"
+                },
+                {
+                    "nombre": "Linux 3.2 - 3.8",
+                    "precision": "95"
+                },
+                {
+                    "nombre": "OpenWrt Chaos Calmer (Linux 3.10 - 3.14)",
+                    "precision": "95"
+                },
+                {
+                    "nombre": "Linux 3.10 - 4.11",
+                    "precision": "94"
+                },
+                {
+                    "nombre": "Linux 5.10 - 5.13",
+                    "precision": "94"
+                },
+                {
+                    "nombre": "DD-WRT v24 or v30 (Linux 3.10)",
+                    "precision": "94"
+                },
+                {
+                    "nombre": "Linux 3.4",
+                    "precision": "94"
+                }
+            ],
+            "puertos": [
+                {
+                    "puerto": 23,
+                    "protocolo": "tcp",
+                    "estado": "open",
+                    "servicio": "telnet",
+                    "producto": "Huawei Home Gateway telnetd",
+                    "version": null,
+                    "scripts_nse": {
+                        "banner": "\\xFF\\xFB\\x01\\xFF\\xFB\\x03\\xFF\\xFB\\x18\\x0D\\x0AWelcome Visiting Hu\nawei Home Gateway\\x0D\\x0ACopyright by Huawei Technologies Co., Ltd.\\...\n"
+                    }
+                },
+                {
+                    "puerto": 53,
+                    "protocolo": "tcp",
+                    "estado": "open",
+                    "servicio": "domain",
+                    "producto": null,
+                    "version": null,
+                    "scripts_nse": {
+                        "fingerprint-strings": "\n  DNSVersionBindReqTCP: \n    version\n    bind\n    Akamai Vantio CacheServe 7.7.2.3"
+                    }
+                },
+                {
+                    "puerto": 80,
+                    "protocolo": "tcp",
+                    "estado": "open",
+                    "servicio": "http",
+                    "producto": null,
+                    "version": null,
+                    "scripts_nse": {
+                        "fingerprint-strings": "\n  FourOhFourRequest, GetRequest: \n    HTTP/1.1 400 Bad Request\n    Connection: Keep-Alive\n  GenericLines: \n    HTTP/1.1 404 Not Found\n    Connection: Keep-Alive\n    requested URL was not found on this server.\n  HTTPOptions, RTSPRequest, SIPOptions: \n    HTTP/1.1 404 Not Found\n    Content-Type:text/html\n    Pragma:no-cache\n    Cache-control:no-cache, no-store, max-age=0\n    Transfer-Encoding:chunked\n    X-Frame-Options:SAMEORIGIN\n    Connection:Keep-Alive\n    X-XSS-Protection:1; mode=block\n    Content-Security-Policy:default-src 'self' 'unsafe-inline' 'unsafe-eval'\n    requested URL was not found on this server.",
+                        "http-title": "Site doesn't have a title (text/html)."
+                    }
+                }
+            ]
+        },
+        {
+            "ip": "192.168.100.100",
+            "hostname": null,
+            "estado": "up",
+            "sistema_operativo": [
+                {
+                    "nombre": "Apple macOS 26.0 (Tahoe) or iOS 26 (Darwin 25.0.0)",
+                    "precision": "99"
+                },
+                {
+                    "nombre": "Apple macOS 11 (Big Sur) - 13 (Ventura) or iOS 16 (Darwin 20.6.0 - 22.4.0)",
+                    "precision": "96"
+                },
+                {
+                    "nombre": "Apple iOS 26",
+                    "precision": "96"
+                },
+                {
+                    "nombre": "Apple iOS 17",
+                    "precision": "96"
+                },
+                {
+                    "nombre": "Apple TV 5",
+                    "precision": "93"
+                },
+                {
+                    "nombre": "Apple iOS 15.0 - 15.6 (Darwin 21.1.0 - 21.6.0)",
+                    "precision": "93"
+                },
+                {
+                    "nombre": "Apple macOS 10.13 (High Sierra) - 10.15 (Catalina) or iOS 11.0 - 14.3 (Darwin 17.0.0 - 20.2.0)",
+                    "precision": "93"
+                },
+                {
+                    "nombre": "Apple macOS 10.14 (Mojave) (Darwin 18.7.0)",
+                    "precision": "93"
+                },
+                {
+                    "nombre": "Apple macOS 14.6 (Sonoma) (Darwin 23.6.0)",
+                    "precision": "93"
+                },
+                {
+                    "nombre": "Apple iOS 26.1",
+                    "precision": "92"
+                }
+            ],
+            "puertos": [
+                {
+                    "puerto": 853,
+                    "protocolo": "tcp",
+                    "estado": "open",
+                    "servicio": "domain-s",
+                    "producto": null,
+                    "version": null,
+                    "scripts_nse": {}
+                }
+            ]
+        },
+        {
+            "ip": "192.168.100.128",
+            "hostname": null,
+            "estado": "up",
+            "sistema_operativo": [
+                {
+                    "nombre": "Microsoft Windows 11 24H2 - 25H2",
+                    "precision": "100"
+                }
+            ],
+            "puertos": [
+                {
+                    "puerto": 135,
+                    "protocolo": "tcp",
+                    "estado": "open",
+                    "servicio": "msrpc",
+                    "producto": "Microsoft Windows RPC",
+                    "version": null,
+                    "scripts_nse": {}
+                },
+                {
+                    "puerto": 139,
+                    "protocolo": "tcp",
+                    "estado": "open",
+                    "servicio": "netbios-ssn",
+                    "producto": "Microsoft Windows netbios-ssn",
+                    "version": null,
+                    "scripts_nse": {}
+                },
+                {
+                    "puerto": 445,
+                    "protocolo": "tcp",
+                    "estado": "open",
+                    "servicio": "microsoft-ds",
+                    "producto": null,
+                    "version": null,
+                    "scripts_nse": {}
+                }
+            ]
+        },
+        {
+            "ip": "192.168.100.167",
+            "hostname": null,
+            "estado": "up",
+            "sistema_operativo": [
+                {
+                    "nombre": "Linux 3.2 - 4.14",
+                    "precision": "97"
+                },
+                {
+                    "nombre": "Linux 3.10 - 4.11",
+                    "precision": "95"
+                },
+                {
+                    "nombre": "Android 4.1.1",
+                    "precision": "94"
+                },
+                {
+                    "nombre": "OpenWrt 18 (Linux 4.14)",
+                    "precision": "94"
+                },
+                {
+                    "nombre": "Android 10 - 11 (Linux 4.9 - 4.14)",
+                    "precision": "94"
+                },
+                {
+                    "nombre": "Android 9 - 11 (Linux 4.9 - 4.14)",
+                    "precision": "94"
+                },
+                {
+                    "nombre": "Linux 2.6.32",
+                    "precision": "94"
+                },
+                {
+                    "nombre": "Linux 4.15",
+                    "precision": "94"
+                },
+                {
+                    "nombre": "OpenWrt 21.02 (Linux 5.4)",
+                    "precision": "94"
+                },
+                {
+                    "nombre": "Netgear ReadyNAS 2100 (RAIDiator 4.2.24)",
+                    "precision": "94"
+                }
+            ],
+            "puertos": [
+                {
+                    "puerto": 80,
+                    "protocolo": "tcp",
+                    "estado": "open",
+                    "servicio": "http",
+                    "producto": null,
+                    "version": null,
+                    "scripts_nse": {}
+                }
+            ]
+        },
+        {
+            "ip": "192.168.100.23",
+            "hostname": null,
+            "estado": "up",
+            "sistema_operativo": [
+                {
+                    "nombre": "Linux 3.10 - 4.11",
+                    "precision": "97"
+                },
+                {
+                    "nombre": "Linux 3.2 - 4.14",
+                    "precision": "97"
+                },
+                {
+                    "nombre": "HP P2000 G3 NAS device",
+                    "precision": "91"
+                },
+                {
+                    "nombre": "Linux 2.6.32 - 3.13",
+                    "precision": "91"
+                },
+                {
+                    "nombre": "MikroTik RouterOS 6.36 - 6.48 (Linux 3.3.5)",
+                    "precision": "91"
+                },
+                {
+                    "nombre": "Linux 2.6.32 - 3.10",
+                    "precision": "91"
+                },
+                {
+                    "nombre": "Linux 3.16 - 4.6",
+                    "precision": "90"
+                },
+                {
+                    "nombre": "Linux 3.18",
+                    "precision": "90"
+                },
+                {
+                    "nombre": "DD-WRT (Linux 3.18)",
+                    "precision": "90"
+                },
+                {
+                    "nombre": "Linux 5.10 - 5.13",
+                    "precision": "90"
+                }
+            ],
+            "puertos": [
+                {
+                    "puerto": 80,
+                    "protocolo": "tcp",
+                    "estado": "open",
+                    "servicio": "http",
+                    "producto": null,
+                    "version": null,
+                    "scripts_nse": {
+                        "fingerprint-strings": "\n  FourOhFourRequest, GetRequest: \n    HTTP/1.1 400 Bad Request\n    Connection: Keep-Alive\n  GenericLines: \n    HTTP/1.1 404 Not Found\n    Connection: Keep-Alive\n    requested URL was not found on this server.\n  HTTPOptions, RTSPRequest, SIPOptions: \n    HTTP/1.1 404 Not Found\n    Content-Type:text/html\n    Pragma:no-cache\n    Cache-control:no-cache, no-store, max-age=0\n    Transfer-Encoding:chunked\n    X-Frame-Options:SAMEORIGIN\n    Connection:Keep-Alive\n    X-XSS-Protection:1; mode=block\n    Content-Security-Policy:default-src 'self' 'unsafe-inline' 'unsafe-eval'\n    requested URL was not found on this server.",
+                        "http-title": "Site doesn't have a title (text/html)."
+                    }
+                }
+            ]
+        }
+    ]
+}
