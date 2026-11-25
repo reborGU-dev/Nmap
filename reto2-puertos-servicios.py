@@ -65,3 +65,13 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+"""
+Usé -sV porque pide a Nmap que interactúe con cada puerto abierto para identificar el servicio, el producto y su versión, 
+y no solo el número de puerto. 
+Añadí --open para mostrar solo puertos abiertos y limité el rango a 1-1024 por defecto para que el escaneo sea rápido 
+y razonable con scanme.nmap.org. 
+Separé el código en escanear_servicios() y mostrar_resultados(). 
+Recorrí protocolo → puerto → información, que es como python-nmap organiza el diccionario, y usé .get() con valor por defecto 
+porque product y version pueden venir vacíos.
+"""

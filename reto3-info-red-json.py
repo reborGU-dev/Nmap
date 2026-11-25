@@ -112,3 +112,13 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+
+"""
+Combiné -sV con scripts NSE ligeros y seguros (banner y http-title), que dan información útil sin ser agresivos. 
+Añadí -O solo si el script corre con privilegios, porque Nmap exige permisos elevados para detectar el sistema 
+operativo y así evito que el script falle. 
+Armé un diccionario con la estructura objetivo → hosts → (SO, puertos → scripts). 
+Lo guardé con json.dump(..., indent=4, ensure_ascii=False) para que el archivo sea legible y conserve acentos. 
+Ese formato se puede reutilizar después en reportes u otras herramientas.
+"""

@@ -105,3 +105,15 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+"""
+Usé -sn para que Nmap haga solo descubrimiento de hosts (ping sweep) y no escanee puertos, y añadí -R para intentar resolver 
+el nombre de cada equipo por DNS inverso. 
+Verifiqué con es_admin() si el script tiene privilegios, porque con ellos Nmap usa ARP en la red local, que es más confiable 
+y además devuelve la MAC y el fabricante. 
+En mis pruebas cada ejecución mostraba hosts distintos, ya que los dispositivos con Wi-Fi en ahorro de energía a veces no 
+responden, así que el script repite el escaneo N veces (3 por defecto) y une los resultados en un diccionario indexado por IP. 
+Un contador de apariciones (por ejemplo 2/3) distingue los equipos estables de los intermitentes. 
+Separé el código en una_pasada(), descubrir_hosts() y main(), ordené las IP con ipaddress.ip_address para que .2 salga 
+antes que .100, y usé argparse y try/except con PortScannerError para recibir el objetivo por línea de comandos y manejar errores.
+"""
